@@ -3,32 +3,35 @@
 	"id": "elytratime",
 	"version": "${version}",
 	"name": "Elytra Time",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Calculates and displays the flying time left on an elytra, based on its durability",
 	"authors": [
-		"Me!"
+		"MediumDifficulty"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/MediumDifficulty/ElytraTime"
 	},
-	"license": "CC0-1.0",
+	"license": "GNU LGPL v3",
 	"icon": "assets/elytratime/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"yes.mediumdifficulty.elytratime.ElytraTime"
+		],
+		"client": [
+			"yes.mediumdifficulty.elytratime.ElytraTimeClient"
 		]
 	},
 	"mixins": [
-		"elytratime.mixins.json"
+		"elytratime.mixins.json",
+		{
+			"config": "elytratime.client.mixins.json",
+			"environment": "client"
+		}
 	],
 	"depends": {
 		"fabricloader": ">=0.14.21",
-		"minecraft": "~1.20.1",
+		"minecraft": ">=1.19.2",
 		"java": ">=17",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
+		"fabric-api": ">=0.59.0"
 	}
 }
