@@ -33,7 +33,7 @@ public class ElytraTimeClient implements ClientModInitializer {
                 ItemStack chestPlate = client.player.getInventory().getArmorStack(EquipmentSlot.CHEST.getEntitySlotId());
 
                 if (chestPlate.getItem() instanceof ElytraItem) {
-                    client.player.sendMessage(Text.translatable("message.elytratime.time_report", Calculator.formatTime(Calculator.timeLeft(chestPlate)))
+                    client.player.sendMessage(Text.literal(Util.formatTimePercent(chestPlate,ClientTextUtils.getTimeReportFormat(), ClientTextUtils.getTimeFormat()))
                             .formatted(Formatting.GREEN));
                 } else {
                     client.player.sendMessage(Text.translatable("message.elytratime.no_elytra").formatted(Formatting.RED));
