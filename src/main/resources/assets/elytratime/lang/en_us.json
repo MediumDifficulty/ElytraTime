@@ -1,9 +1,7 @@
 {
 	"key.elytratime.show": "Show time left",
 	"category.elytratime.controls": "Elytra Time",
-	"message.elytratime.time_report": "Flight time remaining: %s",
 	"message.elytratime.no_elytra": "You don't have an elytra equipped!",
-	"text.elytratime.remaining": "%s remaining",
 	"value.elytratime.tooltip_format": "[TIME] remaining ([%]%)",
 	"value.elytratime.time_format": "[M]m [S]s",
 	"value.elytratime.time_report_format": "Flight time remaining: [TIME] ([%]%)",

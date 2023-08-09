@@ -1,7 +1,5 @@
 {
 	"key.elytratime.show": "Reveal the time henceforth",
 	"category.elytratime.controls": "Elytra Hour",
-	"message.elytratime.time_report": "Flight hour remaining: %s",
-	"message.elytratime.no_elytra": "Thou lacketh an elytra upon thee!",
-	"text.elytratime.remaining": "%s doth remaineth"
+	"message.elytratime.no_elytra": "Thou lacketh an elytra upon thee!"
 }

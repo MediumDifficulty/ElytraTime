@@ -2,6 +2,7 @@ package yes.mediumdifficulty.elytratime;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import net.fabricmc.fabric.api.client.item.v1.ItemTooltipCallback;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
@@ -39,6 +40,11 @@ public class ElytraTimeClient implements ClientModInitializer {
                     client.player.sendMessage(Text.translatable("message.elytratime.no_elytra").formatted(Formatting.RED));
                 }
             }
+        });
+
+        ItemTooltipCallback.EVENT.register((itemStack, context, text) -> {
+            if (itemStack.getItem() instanceof ElytraItem && ElytraTime.config.tooltipEnabled)
+                text.add(1, Text.literal(Util.formatTimePercent(itemStack, ClientTextUtils.getTooltipFormat(), ClientTextUtils.getTimeFormat())).formatted(Formatting.GREEN));
         });
     }
 
