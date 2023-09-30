@@ -11,6 +11,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Config {
+    public static class Alert {
+        public String message;
+        int time;
+
+        public Alert(int Time) {
+        }
+    }
+
     public static final String CONFIG_FILE = "elytratime.json";
 
     public boolean tooltipEnabled = true;

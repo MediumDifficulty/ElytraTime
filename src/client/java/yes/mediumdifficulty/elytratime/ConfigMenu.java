@@ -51,6 +51,46 @@ public class ConfigMenu {
                 .setDefaultValue(ClientTextUtils.getValueFromKey("value.elytratime.time_report_format"))
                 .build());
 
+//        general.addEntry(new NestedListListEntry<Config.Alert, MultiElementListEntry<Config.Alert>>(
+//                Text.translatable("title.elytratime.alerts"),
+//                ElytraTime.config.alerts,
+//                false,
+//                Optional::empty,
+//                list -> ElytraTime.config.alerts = list,
+//                () -> Lists.newArrayList(new Config.Alert(30)),
+//                entryBuilder.getResetButtonKey(),
+//                true,
+//                false,
+//                (element, nestedListListEntry) -> {
+//                    if (element == null) {
+//                        ElytraTime.LOGGER.info("element was null");
+//                        Config.Alert newDefaultElemValue = new Config.Alert(10);
+//                        return createAlertItem(newDefaultElemValue, entryBuilder);
+//                    } else {
+//                        return createAlertItem(element, entryBuilder);
+//                    }
+//                }
+//        ));
+
         return builder.build();
     }
+
+//    private static MultiElementListEntry createAlertItem(Config.Alert alert, ConfigEntryBuilder entryBuilder) {
+//        return new MultiElementListEntry<>(Text.translatable("title.elytratime.alert"), alert, Lists.newArrayList(
+//                entryBuilder.startIntSlider(Text.translatable("option.elytratime.alert_threshold"), 10, 0, 100)
+//                        .setSaveConsumer(v -> alert.time = v)
+//                        .build(),
+//
+//                entryBuilder.startStrField(Text.translatable("option.elytratime.alert_message"), ClientTextUtils.getValueFromKey("value.elytratime.alert_message"))
+//                        .setSaveConsumer(v -> alert.message = v)
+//                        .build(),
+//
+//                entryBuilder.startDropdownMenu(Text.translatable("option.elytratime.alert_sound"), DropdownMenuBuilder.TopCellElementBuilder.of(SoundEvents.BLOCK_NOTE_BLOCK_BELL, f -> SoundEvent.of(Identifier.tryParse(f))), e -> e.getId())
+//                        .setSelections(Registries.SOUND_EVENT.stream()
+////                                .sorted(Comparator.comparing(soundEvent -> soundEvent.getId().toString()))
+//                                .map(soundEvent -> DropdownMenuBuilder.TopCellElementBuilder.of(soundEvent))
+//                                .collect(Collectors.toCollection(ArrayList::new)))
+//                        .build()
+//        ), true);
+//    }
 }

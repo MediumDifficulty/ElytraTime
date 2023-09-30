@@ -1,6 +1,14 @@
 package yes.mediumdifficulty.elytratime;
 
+import dev.emi.trinkets.api.TrinketsApi;
+import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ElytraItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+
+import java.util.Optional;
 
 public class Util {
     public static String formatTimePercent(ItemStack item, String format, String timeFormat) {
@@ -12,10 +20,33 @@ public class Util {
                 .replaceAll("\\[%]", String.valueOf(percent));
     }
 
-
     public static String formatTime(int time, String format) {
         return format
                 .replaceAll("\\[M]", String.valueOf(time / 60))
                 .replaceAll("\\[S]", String.valueOf(time % 60));
+    }
+
+    public static Optional<ItemStack> findElytra(PlayerEntity player) {
+        ItemStack chestPlate = player.getInventory().getArmorStack(EquipmentSlot.CHEST.getEntitySlotId());
+
+        if (chestPlate.getItem() instanceof ElytraItem) {
+            return Optional.of(chestPlate);
+        }
+
+        if (FabricLoader.getInstance().isModLoaded("trinkets")) {
+            var found = TrinketsApi.getTrinketComponent(player).flatMap(x -> {
+                var equipped = x.getEquipped(Items.ELYTRA);
+
+                if (equipped.isEmpty())
+                    return Optional.empty();
+
+                return Optional.of(equipped.get(0).getRight());
+            });
+
+            if (found.isPresent())
+                return found;
+        }
+
+        return Optional.empty();
     }
 }

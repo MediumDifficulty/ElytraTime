@@ -18,6 +18,4 @@ public class ClientTextUtils {
     public static String getValueFromKey(String key) {
         return Language.getInstance().get(key);
     }
-
-
 }
