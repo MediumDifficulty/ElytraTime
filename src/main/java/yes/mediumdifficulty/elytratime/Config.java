@@ -22,7 +22,6 @@ public class Config {
     public static final String CONFIG_FILE = "elytratime.json";
 
     public boolean tooltipEnabled = true;
-    public int alertThreshold = 10;
     public String tooltipFormat = "";
     public String timeFormat = "";
     public String timeReportFormat = "";

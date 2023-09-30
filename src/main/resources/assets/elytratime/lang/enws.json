@@ -1,5 +1,21 @@
 {
 	"key.elytratime.show": "Reveal the time henceforth",
-	"category.elytratime.controls": "Elytra Hour",
-	"message.elytratime.no_elytra": "Thou lacketh an elytra upon thee!"
+	"key.elytratime.config": "Reveal the configuration booklet",
+	"category.elytratime.controls": "Elytra Duration",
+	"message.elytratime.no_elytra": "Thou lacketh an elytra upon thee!",
+	"value.elytratime.tooltip_format": "[TIME] remaining ([%]%)",
+	"value.elytratime.time_format": "[M]m [S]s",
+	"value.elytratime.time_report_format": "Flight time remaining: [TIME] ([%]%)",
+	"title.elytratime.config": "Elytra Duration",
+	"category.elytratime.general": "General",
+	"option.elytratime.tooltip_format": "Tooltip Format",
+	"option.elytratime.enable_tooltip": "Enable Tooltip",
+	"option.elytratime.alert_threshold": "Alert Threshold",
+	"option.elytratime.time_format": "Duration Formatting",
+	"option.elytratime.time_report_format": "Duration Speech Format",
+	"tooltip.elytratime.tooltip_format": "The format of the tooltip\n\n§nVariables§r\n§l[TIME]§r: The time remaining\n§l[%]§r: The percentage durability remaining",
+	"tooltip.elytratime.enabled": "Enables / disables the tooltip",
+	"tooltip.elytratime.alert_threshold": "The percentage the elytra must go beneath to henceforth issue a warning",
+	"tooltip.elytratime.time_format": "The time format\n\n§nVariables§r\n§l[M]§r: Minutes\n§l[S]§r: Seconds",
+	"tooltip.elytratime.time_report_format": "The format used for the time report in chat\n\n§nVariables§r\n§l[TIME]§r: The time remaining\n§l[%]§r: The percentage durability remaining"
 }

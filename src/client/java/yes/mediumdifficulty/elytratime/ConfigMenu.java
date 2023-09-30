@@ -33,11 +33,11 @@ public class ConfigMenu {
                 .setRequirement(Requirement.isTrue(enableTooltipEntry))
                 .build());
 
-        general.addEntry(entryBuilder.startIntSlider(Text.translatable("option.elytratime.alert_threshold"), ElytraTime.config.alertThreshold, 0, 100)
-                .setSaveConsumer(v -> ElytraTime.config.alertThreshold = v)
-                .setTooltip(Text.translatable("tooltip.elytratime.alert_threshold"))
-                .setDefaultValue(10)
-                .build());
+//        general.addEntry(entryBuilder.startIntSlider(Text.translatable("option.elytratime.alert_threshold"), ElytraTime.config.alertThreshold, 0, 100)
+//                .setSaveConsumer(v -> ElytraTime.config.alertThreshold = v)
+//                .setTooltip(Text.translatable("tooltip.elytratime.alert_threshold"))
+//                .setDefaultValue(10)
+//                .build());
 
         general.addEntry(entryBuilder.startStrField(Text.translatable("option.elytratime.time_format"), ClientTextUtils.getTimeFormat())
                 .setSaveConsumer(v -> ElytraTime.config.timeFormat = v)

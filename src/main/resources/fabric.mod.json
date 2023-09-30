@@ -8,7 +8,9 @@
 		"MediumDifficulty"
 	],
 	"contact": {
-		"sources": "https://github.com/MediumDifficulty/ElytraTime"
+		"sources": "https://github.com/MediumDifficulty/ElytraTime",
+		"issues": "https://github.com/MediumDifficulty/ElytraTime/issues",
+		"homepage": "https://www.modrinth.com/mod/elytratime"
 	},
 	"license": "GNU LGPL v3",
 	"icon": "assets/elytratime/icon.png",
