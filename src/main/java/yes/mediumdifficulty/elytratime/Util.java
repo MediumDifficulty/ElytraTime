@@ -34,17 +34,19 @@ public class Util {
         }
 
         if (FabricLoader.getInstance().isModLoaded("trinkets")) {
-            var found = TrinketsApi.getTrinketComponent(player).flatMap(x -> {
-                var equipped = x.getEquipped(Items.ELYTRA);
-
-                if (equipped.isEmpty())
-                    return Optional.empty();
-
-                return Optional.of(equipped.get(0).getRight());
+            var found = TrinketsApi.getTrinketComponent(player).flatMap(trinketComponent -> {
+                for (var entry : trinketComponent.getAllEquipped()) {
+                    ItemStack itemStack = entry.getRight();
+                    if (itemStack.getItem() instanceof ElytraItem) {
+                        return Optional.of(itemStack);
+                    }
+                }
+                return Optional.empty();
             });
 
-            if (found.isPresent())
+            if (found.isPresent()) {
                 return found;
+            }
         }
 
         return Optional.empty();
