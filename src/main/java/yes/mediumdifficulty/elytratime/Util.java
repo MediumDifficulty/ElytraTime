@@ -6,14 +6,14 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ElytraItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.world.World;
 
 import java.util.Optional;
 
 public class Util {
-    public static String formatTimePercent(ItemStack item, String format, String timeFormat) {
-        String timeLeft = formatTime(Calculator.timeRemaining(item), timeFormat);
-        int percent = (int)(Calculator.fractionRemaining(item) * 100.0);
+    public static String formatTimePercent(ItemStack item, String format, String timeFormat, World world) {
+        String timeLeft = formatTime(Calculator.timeRemaining(item, world), timeFormat);
+        int percent = (int)(Calculator.fractionRemaining(item, world) * 100.0);
 
         return format
                 .replaceAll("\\[TIME]", timeLeft)
